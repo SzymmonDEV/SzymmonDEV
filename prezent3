@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Walentynki</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+   
+</head>
+
+<body>
+    <aside></aside>
+    <main>
+        
+        <div style="width: 100%; font-size: 30px;">
+            <h3 id="pytanie " class="fade " >Prezent numer 3 </h3>
+            
+        </div>
+        <div>
+             <div id="prezent1">
+                <img src="bukiet.jpg" alt="" style="object-fit: cover; width: 100%; height: 100%; ">
+            </div>
+            <p style="width: 60%; margin: auto; margin-top: 30px; font-size: larger;" class="fade delay2">
+                To ja niosący bukiet na który zasługujesz &lt3
+            </p>
+            
+           
+        </div>
+
+    </main>
+
+    <aside>
+        <a href="tak.html" ><button class="cofaj fadewroc"><img src="return.png" alt="" width="50px" height="50px" style="object-fit: contain;"></button></a>
+    </aside>
+</body>
+
+</html>
