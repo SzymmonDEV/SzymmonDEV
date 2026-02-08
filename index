@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Walentynki</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+   
+</script>
+</head>
+
+
+<body>
+    <aside></aside>
+    <main>
+        <div style="width: 100%;">
+            <img src="serce13.png" alt="kot" id="serce13">
+        </div>
+        <div style="width: 100%; font-size: 30px; " >
+            <h3 id="pytanie" class="fade">Hej zostaniesz moją walentynką??</h3>
+        </div>
+        <div style="display: flex; justify-content: space-around; margin-top:30px" >
+            <a href="tak.html"><button class="fade delay1" >Tak oczywiście</button></a>
+            <button class="fade delay2" onclick="alert('COŚ POSZŁO NIE TAK!! KLIKNĘŁAŚ ZŁY PRZYCISK !!!')">Nie dziękuję</button>
+        </div>
+
+    </main>
+
+    <aside></aside>
+</body>
+
+</html>
