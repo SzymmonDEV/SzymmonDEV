@@ -1,36 +1,323 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="pl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Walentynki</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-   
-</script>
+    <title>Projekt Informatyka - HTML Presentation</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital@0;1&family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #f5f2ed; 
+            --accent-pink: #e8b4b8; 
+            --accent-pink-dark: #d49da2;
+            --text-dark: #3d3d3d;
+            --soft-white: #faf9f6;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-dark);
+            overflow: hidden;
+        }
+
+        .container {
+            height: 100vh;
+            overflow-y: scroll;
+            scroll-snap-type: y mandatory;
+            scroll-behavior: smooth;
+        }
+
+        section {
+            height: 100vh;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            scroll-snap-align: start;
+            position: relative;
+            padding: 20px;
+        }
+
+        .slide-content {
+            position: relative;
+            z-index: 10;
+            width: 94vw;
+            height: 90vh;
+            background: var(--soft-white);
+            padding: 4vh 5vw;
+            border-radius: 12px;
+            box-shadow: 15px 15px 0px var(--accent-pink);
+            border: 2px solid var(--text-dark);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .deco { position: absolute; z-index: 1; opacity: 0.3; }
+        .dots { width: 100px; height: 100px; background-image: radial-gradient(var(--accent-pink) 3px, transparent 3px); background-size: 15px 15px; }
+
+        h1 { font-family: 'Playfair Display', serif; font-size: clamp(3rem, 10vw, 6rem); line-height: 1; margin-bottom: 20px; text-align: center; }
+        h2 { font-family: 'Playfair Display', serif; font-size: clamp(1.8rem, 4vw, 2.5rem); margin-bottom: 20px; color: var(--text-dark); position: relative; display: inline-block; }
+        h2::after { content: ''; position: absolute; bottom: -5px; left: 0; width: 60px; height: 4px; background: var(--accent-pink); }
+        
+        p { font-size: clamp(0.9rem, 1.6vw, 1.2rem); line-height: 1.6; margin-bottom: 15px; text-align: justify; }
+        strong { color: #000; font-weight: 700; background: rgba(232, 180, 184, 0.2); padding: 0 4px; }
+        
+        ul { list-style: none; margin-bottom: 15px; }
+        ul li { font-size: clamp(0.85rem, 1.5vw, 1.1rem); margin-bottom: 10px; padding-left: 25px; position: relative; }
+        ul li::before { content: "✦"; position: absolute; left: 0; color: var(--accent-pink-dark); font-weight: bold; }
+
+        .grid-layout { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; margin-top: 10px; align-items: start; }
+        .highlight-card { background: #fff; padding: 20px; border: 1px solid #ddd; border-left: 5px solid var(--accent-pink); box-shadow: 5px 5px 0px rgba(0,0,0,0.05); }
+
+        .raw-html-box { font-family: serif; color: black; background: white; padding: 15px; border: 1px solid #ccc; text-align: left; margin-top: 10px; }
+        .footer-note { font-style: italic; color: var(--accent-pink-dark); margin-top: 20px; display: block; }
+
+        /* Animacje */
+        .slide-content > * { opacity: 0; transform: translateY(20px); transition: all 0.6s cubic-bezier(0.2, 0.8, 0.2, 1); }
+        .is-visible > * { opacity: 1; transform: translateY(0); }
+        .gora  {
+            display: flex;
+            align-items: flex-start;
+
+        }
+    </style>
 </head>
-
-
 <body>
-    <aside></aside>
-    <main>
-        <div style="width: 100%;">
-            <img src="images/serce13.png" alt="kot" id="serce13">
+
+<div class="container">
+
+    <section style="height: 100vh; width: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; scroll-snap-align: start; position: relative; padding: 20px; text-align: center;">
+    
+    <div class="deco dots" style="top: 5%; left: 5%; position: absolute;"></div>
+
+    <div class="slide-content" style="display: flex; flex-direction: column; align-items: center;"> 
+        <h1 style="margin: 0; font-size: 7rem; !important">HTML</h1>
+        <p style="margin: 10px 0 0 0; font-weight: bold; font-size: 2rem; !important">HyperText Markup Language</p>
+        <p style="margin: 5px 0 0 0; color: #666; font-size: 2rem; !important" >Hipertekstowy język znaczników</p>
+    </div>
+
+</section>
+<section>
+        <div class="slide-content">
+            <h1>Czym są strony internetowe? <3</h1>
+            <div class="grid-layout" >
+                <div>
+                    <p ><strong>Fundament techniczny (Trio Webowe):</strong></p>
+                    <ul>
+                        <li ><strong>HTML:</strong> Szkielet i struktura (tekst, nagłówki, linki).</li>
+                        <li ><strong>CSS:</strong> Styl i estetyka (kolory, układy, czcionki).</li>
+                        <li ><strong>JavaScript:</strong> Interaktywność (animacje, formularze).</li>
+                    </ul>
+                </div>
+                <div>
+                    <p><strong>Sposób działania:</strong> Strony to pliki przechowywane na serwerach. Gdy wpisujesz adres URL, Twoja przeglądarka pobiera te dane i „tłumaczy” kod na obraz widoczny dla człowieka.</p>
+                </div>
+            </div>
+            <p><strong>Rodzaje:</strong> </p>
+                
+                <ul>
+                    <li>Statyczne (rzadko się zmieniają)</li>
+                    <li>Dynamiczne (generowane na bieżąco, np. Facebook).</li>
+                </ul> 
+            <p><strong>Dostępność:</strong> Dzięki standardom W3C strony działają niemal na każdym urządzeniu – od smartfonów po lodówki z ekranami.</p>
+            
         </div>
-        <div style="width: 100%; font-size: 30px; " >
-            <h3 id="pytanie" class="fade">Hej zostaniesz moją walentynką??</h3>
+    </section>
+    <section>
+        <div class="slide-content">
+            <h1 >Czym jest HTML </h1>
+            <p style="font-size: 30px; text-align: center;">to fundament każdej witryny internetowej. Nie jest językiem programowania, lecz językiem znaczników, który mówi przeglądarce, co znajduje się na stronie.  </p>
+                    
+    </section>
+    <section>
+        <div class="slide-content">
+            <h2 style="font-size: 4rem; !important">Historia</h2>
+            <div class="grid-layout">
+                <div>
+                    <div class="highlight-card">
+                    <p>W 1980 roku fizyk <strong>Tim Berners-Lee</strong>, który pracował w ośrodku naukowym CERN, stworzył system o nazwie <strong>ENQUIRE</strong>. Służył on do porządkowania i udostępniania dokumentów naukowych. Najważniejszą jego cechą było to, że użytkownik mógł przechodzić między dokumentami za pomocą odnośników (linków), nawet jeśli znajdowały się w różnych miejscach na świecie.</p>
+                        <p>W 1989 roku Tim Berners-Lee razem z inżynierem Robertem Cailliau zaproponowali stworzenie systemu hipertekstowego działającego w sieci Internet. Ich pomysły były bardzo podobne, dlatego rok później połączyli je w jeden projekt. W 1990 roku powstał projekt <strong>World Wide Web (WWW)</strong>, który został zaakceptowany przez CERN i stał się podstawą dzisiejszych stron internetowych.</p>
+                </div>
+                
+                </div>
+                <div style="flex: 1;  display: flex; align-items: center; justify-content: center; background: #fff; overflow: hidden;">
+                <img src="dragan.png" alt="GIF" style="width: 100%; height: 100%; object-fit: contain;">
+            </div>
+                
+            </div>
         </div>
-        <div style="display: flex; justify-content: space-around; margin-top:30px" >
-            <a href="tak.html"><button class="fade delay1" >Tak oczywiście</button></a>
-            <button class="fade delay2" onclick="alert('COŚ POSZŁO NIE TAK!! KLIKNĘŁAŚ ZŁY PRZYCISK !!!')">Nie dziękuję</button>
+    </section>
+
+    <section>
+    <div class="slide-content" style="display: flex; flex-direction: column;">
+        <h2 style="flex-shrink: 0;">Logo HTML5</h2>
+        <div style="display: flex; flex-direction: row; flex-grow: 1; overflow: hidden; gap: 40px; align-items: stretch;">
+            
+            <div style="flex: 1; font-size: 0.95rem; overflow-y: auto;">
+                <p style="font-size: 1.5rem; !important">Logo HTML (często widzisz je jako pomarańczową tarczę z cyfrą 5) pochodzi od wersji HTML5 i zostało zaprojektowane tak, aby symbolizować kilka rzeczy naraz:</p>
+                <ul>
+                    <li style="font-size: 1.25rem; !important"><strong>1. Tarcza = fundament internetu 🛡️</strong>: Tarcza ma pokazywać, że HTML jest podstawą stron internetowych. Każda strona w sieci w pewnym stopniu opiera się właśnie na HTML.</li>
+                    <li style="font-size: 1.25rem; !important"><strong>2. Kolor pomarańczowy 🟧</strong>: Kolor wybrano, żeby kojarzył się z energią, kreatywnością i nowoczesnością.</li>
+                    <li style="font-size: 1.25rem; !important"><strong>3. Cyfra „5”</strong>: To po prostu odniesienie do wersji HTML5, która była dużym krokiem w rozwoju standardu.</li>
+                    <li style="font-size: 1.25rem; !important"><strong>4. Styl superbohatera 🦸</strong>: Projektanci chcieli pokazać, że HTML5 jest jak „superbohater webu”. Dlatego logo wygląda jak tarcza superbohatera z numerem 5.</li>
+                </ul>
+            </div>
+
+            <div style="flex: 1; display: flex; justify-content: center; align-items: center; padding: 10px; overflow: hidden;">
+                <img src="logo.png" alt="Logo HTML5" style="width: 100%; height: 100%; object-fit: contain;">
+            </div>
+        </div>
+    </div>
+</section>
+
+    
+
+    <section>
+        <div class="slide-content" >
+            <h1 style="font-size: 4rem; !important">Anatomia strony: Z czego składa się kod?</h1>
+            <div class="grid-layout">
+                <div>
+                    <p style="font-size: 1.5rem; !important">Wyobraź sobie, że budujesz cyfrową postać:</p>
+                    <ul>
+                        <li style="font-size: 1.5rem; !important"><strong>&lt;!DOCTYPE html&gt; (Akt urodzenia):</strong> Krótka informacja dla strony „Słuchaj, jestem nowoczesną stroną”.</li>
+                        <li style="font-size: 1.5rem; !important"><strong>&lt;html&gt; (Skóra/Ciało):</strong> Wielki worek, w którym mieści się wszystko.To, co nie jest w środku &lt;html&gt;, dla przeglądarki nie istnieje.
+</li>
+                        <li style="font-size: 1.5rem; !important"><strong>&lt;head&gt; (Mózg):</strong> Myśli i instrukcje, których użytkownik nie widzi. Znajduje się tu tytuł strony (ten na karcie w górze przeglądarki), ustawienia języka (polskie znaki) i "przepis" na to, jak strona ma wyglądać.
+</li>
+                        <li style="font-size: 1.5rem; !important"><strong>&lt;body&gt; (Twarz i Serce):</strong> Wszystko, co widzisz po wejściu na stronę. Tu lądują teksty, zdjęcia, przyciski, filmiki z YouTube i inne dziwadła które są na stronie</li>
+                    </ul>
+                </div>
+                
+            </div>
+            
+        </div>
+    </section>
+<section>
+        <div class="slide-content">
+            <h1 style="font-size: 4rem; !important">Najważniejsze "pustaki do budowy":</h1>
+            
+                
+                
+                    
+                    <ul>
+                        <li style="font-size: 1.5rem; !important">Nagłówki <strong>&lt;h1&gt; – &lt;h6&gt;</strong> </li>
+                        <li style="font-size: 1.5rem; !important">Akapit <strong>&lt;p&gt;</strong> Skrót od paragraph. Używamy go do pisania zwykłych treści, artykułów czy opisów. </li>
+                        <li style="font-size: 1.5rem; !important">Link/Teleport <strong>&lt;a&gt;</strong> Skrót od anchor (kotwica). To najważniejszy element internetu – pozwala "przeskoczyć" na inną stronę po kliknięciu.</li>
+                        <li style="font-size: 1.5rem; !important">Obraz <strong>&lt;img&gt;</strong> Wstawia zdjęcie lub grafikę. W przeciwieństwie do innych, ten znacznik nie potrzebuje "zamknięcia"</li>
+                        <li style="font-size: 1.5rem; !important">Enter <a style="text-decoration: none;" href="https://www.youtube.com/watch?v=kgfYRqmNl2s" target="_blank"><strong>&lt;br&gt;</strong></a> Skrót od break. Wymusza przejście do nowej linii  </li>
+                        
+                    </ul>
+                        
+               
+           
+            
+        </div>
+    </section>
+    <section>
+        <div class="slide-content">
+            <h2>HTML + CSS + JavaScript</h2>
+            <p>Nowoczesne strony wykorzystują trzy technologie:   </p>
+            <ul>
+                <li>HTML (struktura)</li>
+                <li>CSS (wygląd)</li>
+                <li>JavaScript (interaktywność)</li>
+            </ul>
+            
+            <p><strong>SAM HTML TO NIE WSZYSTKO!</strong> <br>
+                Razem tworzą pełną stronę internetową. Tak wyglądałaby sam HTML ...</p>
+            <div class="raw-html-box">
+                <h1 style="font-family: serif; border: none; font-size: 1.5rem;">Nagłówek strony bez CSS</h1>
+                <p style="font-family: serif;">To jest zwykły tekst bez stylizacji. <a href="#" style="color: blue; text-decoration: underline;">Niebieski link</a></p>
+                <label style="font-family: serif;">Lista bez stylizacji :</label>
+                <ol style="font-family: serif; margin-left: 30px;">
+                    <li style="font-family: serif;"> Element listy</li>
+                    <li style="font-family: serif;">Element listy</li>
+                    <li style="font-family: serif;">Element listy</li>
+                </ol>
+            </div>
+        </div>
+    </section>
+
+    <section>
+    <div class="slide-content" style="display: flex; flex-direction: column;">
+        <h2 style="flex-shrink: 0;">Dlaczego HTML jest królem internetu? </h2>
+        <p style="flex-shrink: 0;">&#40Tak jak sor jest królem świata &#41</p>
+        
+        <div style="display: flex; flex-direction: row; flex-grow: 1; overflow: hidden; gap: 40px; align-items: stretch;">
+            <div style="flex: 1.5; overflow-y: auto;">
+                <ul style="column-count: 2; gap: 20px;">
+                    <li style="font-size: 1.35rem; !important"><strong>Prosty do nauki</strong>: Niski próg wejścia. Nie musisz być matematycznym geniuszem. Składnia opiera się na prostych słowach z języka angielskiego</li>
+                    <li style="font-size: 1.35rem; !important"><strong>Fundament internetu</strong>: Każda strona, którą odwiedzasz (Facebook, YouTube, Google), pod spodem używa HTML</li>
+                    <li style="font-size: 1.35rem; !important"><strong>Działa wszędzie</strong>: Nie potrzebujesz specjalnego oprogramowania. Kod HTML otworzysz w każdej przeglądarce (Chrome, Safari, Firefox)</li>
+                    <li style="font-size: 1.35rem; !important"><strong>Doskonała współpraca</strong>: Łatwa integracja. HTML to "szkielet", na który łatwo nałożysz "ubranie" (CSS) i "mięśnie/ruch" (JavaScript).</li>
+                    <li style="font-size: 1.35rem; !important"><strong>Lekkość i szybkość</strong>: Pliki HTML to zwykły tekst. Są bardzo małe, więc ładują się błyskawicznie nawet przy słabym połączeniu internetowym.</li>
+                    <li style="font-size: 1.35rem; !important"><strong>Całkowicie darmowy</strong>: Nie musisz kupować licencji, aby tworzyć strony. Standardy HTML są rozwijane przez społeczność i dostępne dla każdego za darmo.</li>
+                </ul>
+            </div>
+
+            <div style="flex: 1;  display: flex; align-items: center; justify-content: center; background: #fff; overflow: hidden;">
+                <img src="gif andrzej.gif" alt="GIF" style="width: 100%; height: 100%; object-fit: contain;">
+            </div>
+        </div>
+    </div>
+</section>
+
+    <section>
+        <div class="slide-content" >
+            <h2 style="text-align: center;">🏆 Twoje 3 kroki do zrozumienia sieci</h2>
+            <ul>
+                <li>1. <strong>Strona to nie magia, to instrukcja.</strong></li>
+                <li>2. <strong>HTML to fundament (Szkielet).</strong></li>
+                <li>3. <a href="https://www.youtube.com/watch?v=q8PU9HGSwnc&list=RDq8PU9HGSwnc&start_radio=1" style="color: var(--accent-pink-dark); font-weight: bold; text-decoration: underline;" target="_blank"><strong>To dopiero początek!</a></strong></li>
+            </ul>
+            
+            
+            <p class="footer-note">"Każda wielka aplikacja, od Facebooka po YouTube, zaczynała się od pojedynczego znacznika &lt;html&gt;."</p>
+            <h2 style="border: none; margin-top: 20px;">PO ZROBIENIU TEJ STRONY CZEKA NAS PROSTA DROGA DO ZOSTANIA NASTĘPNYM MARKIEM CUKERBERGIEM</h2>
+        </div>
+    </section>
+
+    <section>
+    <div class="slide-content" style="text-align: center; display: flex; flex-direction: column; padding: 40px; overflow: hidden; justify-content: flex-start;">
+        
+        <div style="margin-bottom: 30px; position: relative;">
+            <div class="deco dots" style="top: -10px; right: -10px; position: absolute;"></div>
+            <h1 style="font-size: clamp(2.5rem, 6vw, 4rem); margin: 0;">Dziękujemy za uwagę!</h1>
         </div>
 
-    </main>
+        <div style="display: flex; flex-direction: row; justify-content: center; align-items: center; flex-grow: 1; width: 100%; max-height: 55vh; gap: 30px; margin: 0 auto; max-width: 1000px;">
+            
+            <div style="flex: 1; height: 100%; overflow: hidden; border-radius: 30px; border: 2px solid var(--accent-pink); box-shadow: 10px 10px 0px rgba(0,0,0,0.05);">
+                <img src="praca1.jpg" alt="Praca 1" style="width: 100%; height: 100%; object-fit: cover; display: block;"> 
+            </div>
+            
+            <div style="flex: 1; height: 100%; overflow: hidden; border-radius: 30px; border: 2px solid var(--accent-pink); box-shadow: 10px 10px 0px rgba(0,0,0,0.05);">
+                <img src="praca2.jpg" alt="Praca 2" style="width: 100%; height: 100%; object-fit: cover; display: block;"> 
+            </div>
 
-    <aside></aside>
+        </div>
+
+        
+    </div>
+</section>
+</div>
+
+<script>
+    const observerOptions = { threshold: 0.5 };
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) entry.target.classList.add('is-visible');
+            else entry.target.classList.remove('is-visible');
+        });
+    }, observerOptions);
+
+    document.querySelectorAll('.slide-content').forEach(slide => observer.observe(slide));
+</script>
+
 </body>
-
 </html>
